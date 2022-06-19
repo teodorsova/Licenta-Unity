@@ -1,0 +1,205 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+// 0x00000001 UnityEngine.Camera RuntimePreviewGenerator::get_InternalCamera()
+extern void RuntimePreviewGenerator_get_InternalCamera_mF08189B592C87F361E89905A37A392F3A9789416 (void);
+// 0x00000002 UnityEngine.Camera RuntimePreviewGenerator::get_PreviewRenderCamera()
+extern void RuntimePreviewGenerator_get_PreviewRenderCamera_m8BAD66751AD8B2D485C2B817FFA87FE745BCE45C (void);
+// 0x00000003 System.Void RuntimePreviewGenerator::set_PreviewRenderCamera(UnityEngine.Camera)
+extern void RuntimePreviewGenerator_set_PreviewRenderCamera_mC3D28C1A388CFDCD3625E67285BA88FA1A69B9FD (void);
+// 0x00000004 UnityEngine.Vector3 RuntimePreviewGenerator::get_PreviewDirection()
+extern void RuntimePreviewGenerator_get_PreviewDirection_mA2CBFC06C3DAACE3EF965478100E877976CB9074 (void);
+// 0x00000005 System.Void RuntimePreviewGenerator::set_PreviewDirection(UnityEngine.Vector3)
+extern void RuntimePreviewGenerator_set_PreviewDirection_mE89902E88BBD214CB03D9ECE1920CF4A0D18CD48 (void);
+// 0x00000006 System.Single RuntimePreviewGenerator::get_Padding()
+extern void RuntimePreviewGenerator_get_Padding_mF13DDF948A018FD0C1B62727C633CD94215557C6 (void);
+// 0x00000007 System.Void RuntimePreviewGenerator::set_Padding(System.Single)
+extern void RuntimePreviewGenerator_set_Padding_mB345338452F0F493ABD330F96BA458657ED45C5B (void);
+// 0x00000008 UnityEngine.Color RuntimePreviewGenerator::get_BackgroundColor()
+extern void RuntimePreviewGenerator_get_BackgroundColor_mC9067EA649F4E3B34CBD20891399385B962817CD (void);
+// 0x00000009 System.Void RuntimePreviewGenerator::set_BackgroundColor(UnityEngine.Color)
+extern void RuntimePreviewGenerator_set_BackgroundColor_m3699E6B34712827B24EAD58EB5903CD0D3477448 (void);
+// 0x0000000A System.Boolean RuntimePreviewGenerator::get_OrthographicMode()
+extern void RuntimePreviewGenerator_get_OrthographicMode_m5814D2460FE31C5D9577933C5DFC476CAB7361B5 (void);
+// 0x0000000B System.Void RuntimePreviewGenerator::set_OrthographicMode(System.Boolean)
+extern void RuntimePreviewGenerator_set_OrthographicMode_mDD469301BF175B1CD0F48585A811149BD2856BAC (void);
+// 0x0000000C System.Single RuntimePreviewGenerator::get_RenderSupersampling()
+extern void RuntimePreviewGenerator_get_RenderSupersampling_m25C5849FC6A5A6E3E41EC5FD65EBBAD41F0CE59F (void);
+// 0x0000000D System.Void RuntimePreviewGenerator::set_RenderSupersampling(System.Single)
+extern void RuntimePreviewGenerator_set_RenderSupersampling_mF40D0EFCC3FD89F63EC709E8FA65913F16182592 (void);
+// 0x0000000E System.Boolean RuntimePreviewGenerator::get_MarkTextureNonReadable()
+extern void RuntimePreviewGenerator_get_MarkTextureNonReadable_m644E431CCFBCD91AA283F1E3F254813A5DE7B83C (void);
+// 0x0000000F System.Void RuntimePreviewGenerator::set_MarkTextureNonReadable(System.Boolean)
+extern void RuntimePreviewGenerator_set_MarkTextureNonReadable_m9C864885FCAA212734BC251572DCCB7B3A61D890 (void);
+// 0x00000010 UnityEngine.Texture2D RuntimePreviewGenerator::GenerateMaterialPreview(UnityEngine.Material,UnityEngine.PrimitiveType,System.Int32,System.Int32)
+extern void RuntimePreviewGenerator_GenerateMaterialPreview_mA9A3BD6A40DDABDAA41A7019A682ED1D451685D4 (void);
+// 0x00000011 UnityEngine.Texture2D RuntimePreviewGenerator::GenerateMaterialPreviewWithShader(UnityEngine.Material,UnityEngine.PrimitiveType,UnityEngine.Shader,System.String,System.Int32,System.Int32)
+extern void RuntimePreviewGenerator_GenerateMaterialPreviewWithShader_m9378F53E067F4AB852CE17E31C08B497D35897F4 (void);
+// 0x00000012 System.Void RuntimePreviewGenerator::GenerateMaterialPreviewAsync(System.Action`1<UnityEngine.Texture2D>,UnityEngine.Material,UnityEngine.PrimitiveType,System.Int32,System.Int32)
+extern void RuntimePreviewGenerator_GenerateMaterialPreviewAsync_mD911CE83A2E5A9F05665A5E9D6E476AE8712BDA3 (void);
+// 0x00000013 System.Void RuntimePreviewGenerator::GenerateMaterialPreviewWithShaderAsync(System.Action`1<UnityEngine.Texture2D>,UnityEngine.Material,UnityEngine.PrimitiveType,UnityEngine.Shader,System.String,System.Int32,System.Int32)
+extern void RuntimePreviewGenerator_GenerateMaterialPreviewWithShaderAsync_m73E638E212CBC3F703E29BDA6FAE2C2D1B8E2208 (void);
+// 0x00000014 UnityEngine.Texture2D RuntimePreviewGenerator::GenerateMaterialPreviewInternal(UnityEngine.Material,UnityEngine.PrimitiveType,UnityEngine.Shader,System.String,System.Int32,System.Int32,System.Action`1<UnityEngine.Texture2D>)
+extern void RuntimePreviewGenerator_GenerateMaterialPreviewInternal_m0A8C72EA2D70DF76F23FBA616573913D745DD687 (void);
+// 0x00000015 UnityEngine.Texture2D RuntimePreviewGenerator::GenerateModelPreview(UnityEngine.Transform,System.Int32,System.Int32,System.Boolean,System.Boolean)
+extern void RuntimePreviewGenerator_GenerateModelPreview_mBA974B0658DC2A016B0924B25F38D306E9203056 (void);
+// 0x00000016 UnityEngine.Texture2D RuntimePreviewGenerator::GenerateModelPreviewWithShader(UnityEngine.Transform,UnityEngine.Shader,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)
+extern void RuntimePreviewGenerator_GenerateModelPreviewWithShader_mF1D543BE9BC5963ABC7433959AE17EFC58C9C444 (void);
+// 0x00000017 System.Void RuntimePreviewGenerator::GenerateModelPreviewAsync(System.Action`1<UnityEngine.Texture2D>,UnityEngine.Transform,System.Int32,System.Int32,System.Boolean,System.Boolean)
+extern void RuntimePreviewGenerator_GenerateModelPreviewAsync_m6422BEB85DF43ADAF927D57346B26553E5C27CC9 (void);
+// 0x00000018 System.Void RuntimePreviewGenerator::GenerateModelPreviewWithShaderAsync(System.Action`1<UnityEngine.Texture2D>,UnityEngine.Transform,UnityEngine.Shader,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)
+extern void RuntimePreviewGenerator_GenerateModelPreviewWithShaderAsync_m194C865E01E29464CCEC9FEE4900BECCE4327BD1 (void);
+// 0x00000019 UnityEngine.Texture2D RuntimePreviewGenerator::GenerateModelPreviewInternal(UnityEngine.Transform,UnityEngine.Shader,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Action`1<UnityEngine.Texture2D>)
+extern void RuntimePreviewGenerator_GenerateModelPreviewInternal_m2B92881D6F9BEBD186DC81727FD3005D2D2E8251 (void);
+// 0x0000001A System.Boolean RuntimePreviewGenerator::CalculateBounds(UnityEngine.Transform,System.Boolean,UnityEngine.Bounds&)
+extern void RuntimePreviewGenerator_CalculateBounds_m783125305DFA7DC8E78A060405AB52A22840EAC1 (void);
+// 0x0000001B System.Void RuntimePreviewGenerator::CalculateCameraPosition(UnityEngine.Camera,UnityEngine.Bounds,System.Single)
+extern void RuntimePreviewGenerator_CalculateCameraPosition_mB76E38A750ABD5A5AE33517B9FC2E0745E678C3C (void);
+// 0x0000001C System.Boolean RuntimePreviewGenerator::IsOutermostPointInDirection(System.Int32,UnityEngine.Vector3)
+extern void RuntimePreviewGenerator_IsOutermostPointInDirection_m73DA9764D74F4906744F45092625AA038475F7C5 (void);
+// 0x0000001D UnityEngine.Ray RuntimePreviewGenerator::GetPlanesIntersection(UnityEngine.Plane,UnityEngine.Plane)
+extern void RuntimePreviewGenerator_GetPlanesIntersection_m422B54DFACF7DFCD640CE62D59E0C01E7A0E301E (void);
+// 0x0000001E System.Void RuntimePreviewGenerator::FindClosestPointsOnTwoLines(UnityEngine.Ray,UnityEngine.Ray,UnityEngine.Vector3&,UnityEngine.Vector3&)
+extern void RuntimePreviewGenerator_FindClosestPointsOnTwoLines_mB020F30CC2FBE3CD58DD3767FED1A5DA7C2F1CF7 (void);
+// 0x0000001F System.Void RuntimePreviewGenerator::SetupCamera()
+extern void RuntimePreviewGenerator_SetupCamera_mFC44F7718E9BA0A14EFB70512D41F4BFA8A074BD (void);
+// 0x00000020 System.Boolean RuntimePreviewGenerator::IsStatic(UnityEngine.Transform)
+extern void RuntimePreviewGenerator_IsStatic_m73837632A1C5FE1E30EFBF450C988F609B10B30F (void);
+// 0x00000021 System.Void RuntimePreviewGenerator::SetLayerRecursively(UnityEngine.Transform)
+extern void RuntimePreviewGenerator_SetLayerRecursively_mD12EE1FE5D8B49D6058F3589B9D067919FBD1EDB (void);
+// 0x00000022 System.Void RuntimePreviewGenerator::GetLayerRecursively(UnityEngine.Transform)
+extern void RuntimePreviewGenerator_GetLayerRecursively_m10CD7657A837480FC3779895535FEEA86C7D4557 (void);
+// 0x00000023 System.Void RuntimePreviewGenerator::SetLayerRecursively(UnityEngine.Transform,System.Int32&)
+extern void RuntimePreviewGenerator_SetLayerRecursively_mADF9DCAE62E4481853E2EF4D72685F1C4A072A5C (void);
+// 0x00000024 System.Void RuntimePreviewGenerator::.cctor()
+extern void RuntimePreviewGenerator__cctor_m53EBFA98205980581BAFA8D16ECCD09771D3B642 (void);
+// 0x00000025 System.Void RuntimePreviewGenerator/CameraSetup::GetSetup(UnityEngine.Camera)
+extern void CameraSetup_GetSetup_mAF76AB4CBFBB2D82E59AF5A0321E121E713D1C37 (void);
+// 0x00000026 System.Void RuntimePreviewGenerator/CameraSetup::ApplySetup(UnityEngine.Camera)
+extern void CameraSetup_ApplySetup_m2D7DFA1047899FBCD65E594BC16FFE1B0C1803D1 (void);
+// 0x00000027 System.Void RuntimePreviewGenerator/CameraSetup::.ctor()
+extern void CameraSetup__ctor_m9F6A175A94BEEBCFF1EDE4AD617AE70231758874 (void);
+// 0x00000028 System.Void RuntimePreviewGenerator/<>c__DisplayClass48_0::.ctor()
+extern void U3CU3Ec__DisplayClass48_0__ctor_m9569296E3E225B6EC6837DE75116FADC67FD267C (void);
+// 0x00000029 System.Void RuntimePreviewGenerator/<>c__DisplayClass48_0::<GenerateModelPreviewInternal>b__0(UnityEngine.Rendering.AsyncGPUReadbackRequest)
+extern void U3CU3Ec__DisplayClass48_0_U3CGenerateModelPreviewInternalU3Eb__0_m3B6FE81DB6FBE763C938E7594FAD7B067E478092 (void);
+static Il2CppMethodPointer s_methodPointers[41] = 
+{
+	RuntimePreviewGenerator_get_InternalCamera_mF08189B592C87F361E89905A37A392F3A9789416,
+	RuntimePreviewGenerator_get_PreviewRenderCamera_m8BAD66751AD8B2D485C2B817FFA87FE745BCE45C,
+	RuntimePreviewGenerator_set_PreviewRenderCamera_mC3D28C1A388CFDCD3625E67285BA88FA1A69B9FD,
+	RuntimePreviewGenerator_get_PreviewDirection_mA2CBFC06C3DAACE3EF965478100E877976CB9074,
+	RuntimePreviewGenerator_set_PreviewDirection_mE89902E88BBD214CB03D9ECE1920CF4A0D18CD48,
+	RuntimePreviewGenerator_get_Padding_mF13DDF948A018FD0C1B62727C633CD94215557C6,
+	RuntimePreviewGenerator_set_Padding_mB345338452F0F493ABD330F96BA458657ED45C5B,
+	RuntimePreviewGenerator_get_BackgroundColor_mC9067EA649F4E3B34CBD20891399385B962817CD,
+	RuntimePreviewGenerator_set_BackgroundColor_m3699E6B34712827B24EAD58EB5903CD0D3477448,
+	RuntimePreviewGenerator_get_OrthographicMode_m5814D2460FE31C5D9577933C5DFC476CAB7361B5,
+	RuntimePreviewGenerator_set_OrthographicMode_mDD469301BF175B1CD0F48585A811149BD2856BAC,
+	RuntimePreviewGenerator_get_RenderSupersampling_m25C5849FC6A5A6E3E41EC5FD65EBBAD41F0CE59F,
+	RuntimePreviewGenerator_set_RenderSupersampling_mF40D0EFCC3FD89F63EC709E8FA65913F16182592,
+	RuntimePreviewGenerator_get_MarkTextureNonReadable_m644E431CCFBCD91AA283F1E3F254813A5DE7B83C,
+	RuntimePreviewGenerator_set_MarkTextureNonReadable_m9C864885FCAA212734BC251572DCCB7B3A61D890,
+	RuntimePreviewGenerator_GenerateMaterialPreview_mA9A3BD6A40DDABDAA41A7019A682ED1D451685D4,
+	RuntimePreviewGenerator_GenerateMaterialPreviewWithShader_m9378F53E067F4AB852CE17E31C08B497D35897F4,
+	RuntimePreviewGenerator_GenerateMaterialPreviewAsync_mD911CE83A2E5A9F05665A5E9D6E476AE8712BDA3,
+	RuntimePreviewGenerator_GenerateMaterialPreviewWithShaderAsync_m73E638E212CBC3F703E29BDA6FAE2C2D1B8E2208,
+	RuntimePreviewGenerator_GenerateMaterialPreviewInternal_m0A8C72EA2D70DF76F23FBA616573913D745DD687,
+	RuntimePreviewGenerator_GenerateModelPreview_mBA974B0658DC2A016B0924B25F38D306E9203056,
+	RuntimePreviewGenerator_GenerateModelPreviewWithShader_mF1D543BE9BC5963ABC7433959AE17EFC58C9C444,
+	RuntimePreviewGenerator_GenerateModelPreviewAsync_m6422BEB85DF43ADAF927D57346B26553E5C27CC9,
+	RuntimePreviewGenerator_GenerateModelPreviewWithShaderAsync_m194C865E01E29464CCEC9FEE4900BECCE4327BD1,
+	RuntimePreviewGenerator_GenerateModelPreviewInternal_m2B92881D6F9BEBD186DC81727FD3005D2D2E8251,
+	RuntimePreviewGenerator_CalculateBounds_m783125305DFA7DC8E78A060405AB52A22840EAC1,
+	RuntimePreviewGenerator_CalculateCameraPosition_mB76E38A750ABD5A5AE33517B9FC2E0745E678C3C,
+	RuntimePreviewGenerator_IsOutermostPointInDirection_m73DA9764D74F4906744F45092625AA038475F7C5,
+	RuntimePreviewGenerator_GetPlanesIntersection_m422B54DFACF7DFCD640CE62D59E0C01E7A0E301E,
+	RuntimePreviewGenerator_FindClosestPointsOnTwoLines_mB020F30CC2FBE3CD58DD3767FED1A5DA7C2F1CF7,
+	RuntimePreviewGenerator_SetupCamera_mFC44F7718E9BA0A14EFB70512D41F4BFA8A074BD,
+	RuntimePreviewGenerator_IsStatic_m73837632A1C5FE1E30EFBF450C988F609B10B30F,
+	RuntimePreviewGenerator_SetLayerRecursively_mD12EE1FE5D8B49D6058F3589B9D067919FBD1EDB,
+	RuntimePreviewGenerator_GetLayerRecursively_m10CD7657A837480FC3779895535FEEA86C7D4557,
+	RuntimePreviewGenerator_SetLayerRecursively_mADF9DCAE62E4481853E2EF4D72685F1C4A072A5C,
+	RuntimePreviewGenerator__cctor_m53EBFA98205980581BAFA8D16ECCD09771D3B642,
+	CameraSetup_GetSetup_mAF76AB4CBFBB2D82E59AF5A0321E121E713D1C37,
+	CameraSetup_ApplySetup_m2D7DFA1047899FBCD65E594BC16FFE1B0C1803D1,
+	CameraSetup__ctor_m9F6A175A94BEEBCFF1EDE4AD617AE70231758874,
+	U3CU3Ec__DisplayClass48_0__ctor_m9569296E3E225B6EC6837DE75116FADC67FD267C,
+	U3CU3Ec__DisplayClass48_0_U3CGenerateModelPreviewInternalU3Eb__0_m3B6FE81DB6FBE763C938E7594FAD7B067E478092,
+};
+static const int32_t s_InvokerIndices[41] = 
+{
+	6077,
+	6077,
+	5983,
+	6101,
+	5993,
+	6090,
+	5989,
+	6060,
+	5977,
+	6058,
+	5976,
+	6090,
+	5989,
+	6058,
+	5976,
+	4697,
+	4238,
+	4495,
+	4204,
+	4182,
+	4415,
+	4185,
+	4273,
+	4160,
+	4148,
+	4854,
+	5128,
+	5239,
+	5439,
+	4797,
+	6103,
+	5685,
+	5983,
+	5983,
+	5566,
+	6103,
+	3277,
+	3277,
+	4034,
+	4034,
+	3206,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_RuntimePreviewGenerator_Runtime_CodeGenModule;
+const Il2CppCodeGenModule g_RuntimePreviewGenerator_Runtime_CodeGenModule = 
+{
+	"RuntimePreviewGenerator.Runtime.dll",
+	41,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL, // module initializer,
+	NULL,
+	NULL,
+	NULL,
+};

@@ -52,7 +52,7 @@ public class CatalogueController : MonoBehaviour
 
     void Start()
     {
-
+        AssetBundle.UnloadAllAssetBundles(true);
         InitComponents();
         AddLoadingButton();
 
