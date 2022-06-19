@@ -1,0 +1,105 @@
+ManifestFileVersion: 0
+CRC: 518624582
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4cd93c91f52a349475437a681238696b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7428a5560c5923e1a894e3e2445b8fc0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BigFurniturePack/Prefabs/Mirrors/mirror_2.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/chair_2.prefab
+- Assets/BigFurniturePack/Prefabs/Bathroom/flasket.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/coffee_table_2.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/sofa_3.prefab
+- Assets/BigFurniturePack/Prefabs/Mirrors/mirror_4.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_corner_INV.prefab
+- Assets/BigFurniturePack/Prefabs/Vases/plate.prefab
+- Assets/BigFurniturePack/Prefabs/Bathroom/toilet.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/table_1.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/rack_1.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_2.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/kitchen_table_2.prefab
+- Assets/BigFurniturePack/Prefabs/Lights/torchere_4.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/chair_4.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/rack_4.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/cabinet_3.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/coffee_table_4.prefab
+- Assets/BigFurniturePack/Textures/cloth_4.jpg
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_1.prefab
+- Assets/BigFurniturePack/Prefabs/Lights/torchere_1.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/cabinet_2.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/corner_sofa.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_4.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_2.prefab
+- Assets/BigFurniturePack/Prefabs/Mirrors/mirror_3.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/table_2.prefab
+- Assets/BigFurniturePack/Textures/wood_3.JPG
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/sofa_2.prefab
+- Assets/BigFurniturePack/Prefabs/Bathroom/drying_with_towel.prefab
+- Assets/BigFurniturePack/Prefabs/Lights/torchere_3.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/tv_table_1.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_3.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/sofa_1.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_4_INV.prefab
+- Assets/BigFurniturePack/Textures/cloth_2.jpg
+- Assets/BigFurniturePack/Textures/cloth_1.jpg
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/kitchen_chair_1.prefab
+- Assets/BigFurniturePack/Prefabs/Vases/vase_3.prefab
+- Assets/BigFurniturePack/Prefabs/Vases/vase_5.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_1.prefab
+- Assets/BigFurniturePack/Prefabs/Beds/bed_1.prefab
+- Assets/BigFurniturePack/Prefabs/Lights/wall_lighter.prefab
+- Assets/BigFurniturePack/Prefabs/Vases/vase_1.prefab
+- Assets/BigFurniturePack/Textures/cloth_3.jpg
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/pouf.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/rack_2.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/sofa_4.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/rack_5.prefab
+- Assets/BigFurniturePack/Prefabs/Bathroom/brush.prefab
+- Assets/BigFurniturePack/Textures/floor_nm.jpg
+- Assets/BigFurniturePack/Prefabs/Lights/torchere_2.prefab
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_corner.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/coffee_table_3.prefab
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/rack_3.prefab
+- Assets/BigFurniturePack/Textures/floor.jpg
+- Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_3.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/chair_3.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/kitchen_table_1.prefab
+- Assets/BigFurniturePack/Prefabs/Mirrors/mirror_1.prefab
+- Assets/BigFurniturePack/Prefabs/Vases/vase_2.prefab
+- Assets/BigFurniturePack/Textures/cloth_5.jpg
+- Assets/BigFurniturePack/Prefabs/Cabinets&Racks/cabinet_1.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/tv_table_2.prefab
+- Assets/BigFurniturePack/Prefabs/Beds/bed_2.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/coffee_table_1.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/kitchen_chair_2.prefab
+- Assets/BigFurniturePack/Prefabs/Tables/tv_table_3.prefab
+- Assets/BigFurniturePack/Prefabs/Bathroom/shower.prefab
+- Assets/BigFurniturePack/Textures/wood_2.jpg
+- Assets/BigFurniturePack/Prefabs/Vases/vase_4.prefab
+- Assets/BigFurniturePack/Prefabs/Sofas&Chairs/chair_1.prefab
+- Assets/BigFurniturePack/Textures/wood_1.jpg
+- Assets/BigFurniturePack/Prefabs/Bathroom/washbasin.prefab
+- Assets/BigFurniturePack/Prefabs/Beds/bed_3.prefab
+Dependencies: []

@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 2412539559
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: rastconstruct.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: teofurnituresbinder.unity3d
+      Dependencies: {}

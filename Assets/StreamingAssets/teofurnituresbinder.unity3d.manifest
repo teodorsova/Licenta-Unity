@@ -1,0 +1,46 @@
+ManifestFileVersion: 0
+CRC: 3383431393
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5ec55d9320d466b7e62c186f327c1c37
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9606d8980d355f6cd7ac3aa7c63f55cf
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/INiemiec/FurniturePack/Prefabs/Binder/BinderBlack.prefab
+- Assets/INiemiec/FurniturePack/Materials/Binder/BinderGreen.mat
+- Assets/INiemiec/FurniturePack/Materials/Binder/BinderWhite.mat
+- Assets/INiemiec/FurniturePack/Models/Binder/Binder.fbx
+- Assets/INiemiec/FurniturePack/Prefabs/Binder/BinderRed.prefab
+- Assets/INiemiec/FurniturePack/Materials/Carpet1/Carpet1.mat
+- Assets/INiemiec/FurniturePack/Materials/Binder/BinderBlack.mat
+- Assets/INiemiec/FurniturePack/Prefabs/Binder/BinderBlue.prefab
+- Assets/INiemiec/FurniturePack/Prefabs/Binder/BinderGreen.prefab
+- Assets/INiemiec/FurniturePack/Prefabs/Binder/BinderYellow.prefab
+- Assets/INiemiec/FurniturePack/Materials/Binder/BinderYellow.mat
+- Assets/INiemiec/FurniturePack/Materials/Binder/BinderBlue.mat
+- Assets/INiemiec/FurniturePack/Materials/Binder/BinderRed.mat
+- Assets/INiemiec/FurniturePack/Prefabs/Binder/BinderWhite.prefab
+Dependencies: []
