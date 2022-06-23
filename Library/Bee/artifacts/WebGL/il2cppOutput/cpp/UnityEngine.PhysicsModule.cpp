@@ -907,6 +907,7 @@ IL_0023:
 	{
 		PhysicsScene_t55222DD37072E8560EE054A07C0E3FE391D9D9DE L_7 = ___scene0;
 		NativeArray_1_tA04FF6E7BE3D24B3E6351C63BF7229421DFE1259 L_8 = V_0;
+		NullCheck(G_B3_0);
 		Action_2_Invoke_m7EA811A13BB45D59926C636C90CFD2FCE6D89B3B_inline(G_B3_0, L_7, L_8, NULL);
 	}
 
@@ -934,6 +935,7 @@ IL_0038:
 	{
 		PhysicsScene_t55222DD37072E8560EE054A07C0E3FE391D9D9DE L_11 = ___scene0;
 		NativeArray_1_tA04FF6E7BE3D24B3E6351C63BF7229421DFE1259 L_12 = V_0;
+		NullCheck(G_B7_0);
 		Action_2_Invoke_m7EA811A13BB45D59926C636C90CFD2FCE6D89B3B_inline(G_B7_0, L_11, L_12, NULL);
 	}
 
@@ -2089,8 +2091,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhysicsScene_ToString_mA4E28A3068A8
 		int32_t L_2 = __this->___m_Handle_0;
 		int32_t L_3 = L_2;
 		RuntimeObject* L_4 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_3);
+		NullCheck(L_1);
 		ArrayElementTypeCheck (L_1, L_4);
-		(L_1)->SetAtUnchecked(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_4);
+		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_4);
 		String_t* L_5;
 		L_5 = UnityString_Format_m560566B98CA1AC19A6C2B424AE640F6E95D3B9B0(_stringLiteral21ACE806CE655297BC379B3AD17E97F0A68B6AEC, L_1, NULL);
 		V_0 = L_5;

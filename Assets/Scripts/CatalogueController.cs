@@ -1,5 +1,4 @@
-using Azure.StorageServices;
-using RESTClient;
+using Proyecto26;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +12,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts;
 using UnityEngine.Networking;
+using UnityEditor;
+using RSG;
+using Proyecto26.Helper;
 
 public class CatalogueController : MonoBehaviour
 {
@@ -23,19 +25,21 @@ public class CatalogueController : MonoBehaviour
     private GameObject categoryButton;
     private GameObject contentContainer;
     private GameObject buttonContent;
+    private GameObject textMeshProStatus;
+    private Dictionary<string, GameObject> contentPerRoom = new Dictionary<string, GameObject>();
     private Button catalogueButton;
     private ScrollRect scrollRect;
     private List<ButtonPrefabPair> buttonPrefabPairs = new List<ButtonPrefabPair>();
     private List<GameObject> instantiatedPrefabs = new List<GameObject>();
+    private List<GameObject> instantiatedPrefabsForButtons = new List<GameObject>();
     private RectTransform viewport;
 
     private List<XmlNodeList> furnitureData = new List<XmlNodeList>();
-    private XmlDocument doc;
+    private XmlDocument doc = new XmlDocument();
 
     private Vector3 prefabPos = new Vector3(-300, -40, 10);
     private Vector3 categoryButtonPos = new Vector3(200, -100, 0);
 
-    private bool isLoaded = false;
     public Text label;
     public byte[] configFile;
     public string assetBundleName = "teofurnituresbinder";
@@ -54,73 +58,12 @@ public class CatalogueController : MonoBehaviour
     {
         AssetBundle.UnloadAllAssetBundles(true);
         InitComponents();
-        AddLoadingButton();
-
-        //StartCoroutine(AccessAzure());
-
-        //var headers = wr.GetRequestHeader;
-        
-    }
-
-    string signWithAccountKey(string stringToSign, string accountKey)
-    {
-        var hmacsha = new System.Security.Cryptography.HMACSHA256();
-        hmacsha.Key = Convert.FromBase64String(accountKey);
-        var signature = hmacsha.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
-        return Convert.ToBase64String(signature);
-    }
-
-    private IEnumerator AccessAzure()
-    {
-        AuthorizationHeaders headers = new AuthorizationHeaders(
-            AzureClient.client,
-            Method.GET,
-            $"https://{AzureClient.storageAccount}.blob.core.windows.net/{AzureClient.container}/{configFileName}",
-            null,
-            null,
-            0);
-        UnityWebRequest wr = new UnityWebRequest();
-        wr.downloadHandler = new DownloadHandlerBuffer();
-        wr.url = $"https://{AzureClient.storageAccount}.blob.core.windows.net/{AzureClient.container}/{configFileName}";
-        wr.method = UnityWebRequest.kHttpVerbGET;
-        wr.SetRequestHeader("accept", "*/*");
-        wr.SetRequestHeader("accept-encoding", "gzip, deflate, br");
-        wr.SetRequestHeader("accept-language", "en-US,en;q=0.9");
-        wr.SetRequestHeader("authorization", $"SharedKey{AzureClient.storageAccount}:{signWithAccountKey("", AzureClient.accessKey)}");
-        wr.SetRequestHeader("connection", "keep-alive");
-        wr.SetRequestHeader("host", "");
-        wr.SetRequestHeader("host", $"https://{AzureClient.storageAccount}.blob.core.windows.net/");
-        
-        //wr.SetRequestHeader("origin", "http://localhost:3000");
-        //wr.SetRequestHeader("referer", "http://localhost:3000");
-        wr.SetRequestHeader("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36");
-        wr.SetRequestHeader("x-ms-version", "2022-06-06");
-        wr.SetRequestHeader("x-ms-date", DateTime.Now.ToString());
-        yield return wr.SendWebRequest();
-
-        if (wr.result != UnityWebRequest.Result.Success)
+        RestClient.Get("http://localhost:5220/api/azure/get/config").Then(response =>
         {
-            Debug.Log(wr.error);
-            Debug.Log(wr.result);
-        }
-        else
-        {
-            // Show results as text
-            Debug.Log(wr.downloadHandler.text);
-
-            // Or retrieve results as binary data
-            byte[] results = wr.downloadHandler.data;
-        }
+            GetConfigBlob(response);
+        });
     }
-    private void Update()
-    {
-        if (!isLoaded)
-        {
-            TappedLoadAssetBundle();
-            isLoaded = true;
-        }
-    }
-
+ 
     private void InitComponents()
     {
         myContainer = GameObject.Find("Container");
@@ -133,42 +76,43 @@ public class CatalogueController : MonoBehaviour
         prefabButton = Resources.Load<GameObject>("Button/Button");
         categoryButton = Resources.Load<GameObject>("Button/CategoryButton");
         contentContainer = Resources.Load<GameObject>("Container/Content");
+        textMeshProStatus = hudCanvas.transform.Find("Status").gameObject;
 
-        foreach(string room in Room.roomNames)
+        InitRoomButtons();
+
+        buttonPrefabPairs.Clear();
+        catalogueContainer.transform
+            .Find("Catalogue")
+            .GetComponent<ScrollRect>().content = buttonContent.GetComponent<RectTransform>();
+
+
+
+        foreach (string room in Room.roomNames)
         {
             prefabDictionary.Add(room, new List<GameObject>());
+            var content = Instantiate(contentContainer, viewport);
+            content.name = room + "Content";
+            content.SetActive(false);
+            contentPerRoom.Add(room, content);
+            AddBackButton(content, buttonContent);
         }
     }
 
-    public void AddLoadingButton()
+    private void GetConfigBlob(ResponseHelper response)
     {
-        var categoryButtonInstance = Instantiate(categoryButton);
-        categoryButtonInstance.transform.SetParent(viewport.transform);
-        categoryButtonInstance.name = "loadingBtn";
-        categoryButtonInstance.transform.localScale = new Vector3(1, 1, 1);
-        categoryButtonInstance.transform.localPosition = new Vector3(0,0,0);
-        categoryButtonInstance.GetComponentInChildren<TextMeshProUGUI>().text = "Loading...";
-    }
+        try
+        {
+            doc.LoadXml(response.Text);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
 
-    public IEnumerator RemoveLoadingButton()
-    {  
-        viewport.transform.Find("loadingBtn").gameObject.transform.SetParent(null);
-        yield return null;
-    }
-
-    public void TappedLoadAssetBundle()
-    {
-        string filename = assetBundleName + ".unity3d";
-        string resourcePath = AzureClient.container + "/" + configFileName;
-        StartCoroutine(AzureClient.blobService.GetXmlBlob<XmlDocument>(GetConfigBlob, resourcePath));   
-    }
-
-    private void GetConfigBlob(IRestResponse<XmlDocument> response)
-    {
-        doc = response.Data;
         XmlNodeList nodeList = doc.ChildNodes;
         XmlNodeList companiesList = nodeList[0].ChildNodes;
         XmlNodeList companyNamesList = companiesList[0].ChildNodes;
+
         foreach (XmlNode companyName in companyNamesList)
         {
             XmlNodeList fileNameList = companyName.ChildNodes;
@@ -179,14 +123,45 @@ public class CatalogueController : MonoBehaviour
                     XmlNodeList furnitureDetails = furniture.ChildNodes;
                     furnitureData.Add(furnitureDetails);
                 }
-                coroutineQueue.Enqueue(AzureClient.blobService.GetAssetBundle(GetAssetBundleComplete, AzureClient.container + "/" + fileName.Name));
+                ExecuteOnMainThread.RunOnMainThread.Enqueue(() => {
+                    RestClient.Post(new RequestHelper
+                    {
+                        Uri = "http://localhost:5220/api/azure/get/package",
+                        BodyString = "{\"FileName\":" + $"\"{fileName.Name}\"" + "}",
+                        ProgressCallback = progress => textMeshProStatus.GetComponent<TextMeshPro>().text = "Downloading " + fileName.Name + "... " + progress * 100 + "%"
+                    }).Then(response =>
+                    {
+                        //Debug.Log(response.Text);
+                        //EditorUtility.DisplayDialog("Response", response.Text, "Ok");
+                        LoadAssets(AssetBundle.LoadFromMemory(response.Data));
+                        textMeshProStatus.GetComponent<TextMeshPro>().text = "Done";
+
+                    }).Then(() =>
+                    {
+                        LoadPrefabs();
+                    }).Catch(error =>
+                    {
+                        Debug.LogError(error.Message);
+
+                    });
+                });
+                //coroutineQueue.Enqueue(AzureClient.blobService.GetAssetBundle(GetAssetBundleComplete, AzureClient.container + "/" + fileName.Name));
+                
 
             }
         }
-        coroutineQueue.Enqueue(InitRoomButtons());
-        coroutineQueue.Enqueue(RemoveLoadingButton());
-        coroutineQueue.Enqueue(LoadPrefabs());
-        StartCoroutine(StartCoroutineCoordinator());
+        if (!ExecuteOnMainThread.RunOnMainThread.IsEmpty)
+        {
+            Action action;
+            while (ExecuteOnMainThread.RunOnMainThread.TryDequeue(out action))
+            {
+                if (action != null)
+                {
+                    action.Invoke();
+                    action = null;
+                }
+            }
+        }
     }
 
     private IEnumerator StartCoroutineCoordinator()
@@ -200,19 +175,14 @@ public class CatalogueController : MonoBehaviour
         {
             while (coroutineQueue.Count > 0)
                 yield return StartCoroutine(coroutineQueue.Dequeue());
-            
+
             yield return null;
         }
     }
-    private void GetAssetBundleComplete(IRestResponse<AssetBundle> response)
+    private void LoadAssets(AssetBundle bundle)
     {
-            assetBundle = response.Data;
-            StartCoroutine(LoadAssets(assetBundle));
-    }
-
-    private IEnumerator LoadAssets(AssetBundle bundle)
-    {
-        GameObject[] loadedObjects = null ;
+        Debug.Log(bundle.name);
+        GameObject[] loadedObjects = null;
         try
         {
             // Load the object asynchronously
@@ -254,10 +224,9 @@ public class CatalogueController : MonoBehaviour
         }
         catch (Exception ex)
         {
-            
+
         }
 
-        yield return loadedObjects;
 
         foreach (GameObject obj in loadedObjects)
         {
@@ -265,7 +234,7 @@ public class CatalogueController : MonoBehaviour
         }
     }
 
-    private void AddPrefab(GameObject obj,Vector3 position = default(Vector3))
+    private void AddPrefab(GameObject obj, Vector3 position = default(Vector3))
     {
         AddPrefab(position, Quaternion.identity, Vector3.one, Color.clear, obj);
     }
@@ -278,7 +247,7 @@ public class CatalogueController : MonoBehaviour
         }
     }
 
-    private IEnumerator InitRoomButtons()
+    private void InitRoomButtons()
     {
 
         buttonContent = Instantiate(contentContainer, viewport);
@@ -296,39 +265,37 @@ public class CatalogueController : MonoBehaviour
             categoryButtonInstance.GetComponent<Button>().onClick.AddListener(delegate { OnClickCategoryButton(room); });
         }
 
-        yield return null;
     }
 
-    private IEnumerator LoadPrefabs()
+    private void LoadPrefabs()
     {
-        buttonPrefabPairs.Clear();
-        catalogueContainer.transform
-            .Find("Catalogue")
-            .GetComponent<ScrollRect>().content = buttonContent.GetComponent<RectTransform>();
+
 
         foreach (KeyValuePair<string, List<GameObject>> prefabArray in prefabDictionary)
         {
-            var content = Instantiate(contentContainer, viewport);
-            content.name = prefabArray.Key + "Content";
-            AddBackButton(content, buttonContent);
+
+
             foreach (GameObject prefab in prefabArray.Value)
             {
-                GameObject catalogueButtonWithFurniture = CreateButtonWithFurniture(prefab);
-                prefabPos += new Vector3(40, 0, 0);
-                catalogueButtonWithFurniture.transform.SetParent(content.transform);
-                catalogueButtonWithFurniture.transform.localScale = new Vector3(1.1f, 1.1f, 1);
-                catalogueButtonWithFurniture.transform.localPosition = prefabPos;
-                catalogueButtonWithFurniture.transform.localRotation = Quaternion.identity;
-                catalogueButtonWithFurniture.GetComponent<Button>().onClick.AddListener(delegate 
-                { 
-                    OnFurnitureButtonClick(catalogueButtonWithFurniture); 
+                if (!instantiatedPrefabsForButtons.Find(p => p == prefab))
+                {
+                    GameObject catalogueButtonWithFurniture = CreateButtonWithFurniture(prefab);
+                    prefabPos += new Vector3(40, 0, 0);
+                    catalogueButtonWithFurniture.transform.SetParent(contentPerRoom[prefabArray.Key].transform);
+                    catalogueButtonWithFurniture.transform.localScale = new Vector3(1.1f, 1.1f, 1);
+                    catalogueButtonWithFurniture.transform.localPosition = prefabPos;
+                    catalogueButtonWithFurniture.transform.localRotation = Quaternion.identity;
+                    catalogueButtonWithFurniture.GetComponent<Button>().onClick.AddListener(delegate
+                    {
+                        OnFurnitureButtonClick(catalogueButtonWithFurniture);
+                    }
+                    );
+                    createButtonPrefabPair(prefab, catalogueButtonWithFurniture);
                 }
-                );
-                createButtonPrefabPair(prefab, catalogueButtonWithFurniture);
             }
-            content.gameObject.SetActive(false);  
+            //contentPerRoom[prefabArray.Key].SetActive(false);
         }
-        yield return null;
+
     }
 
     private void createButtonPrefabPair(GameObject prefab, GameObject catalogueButtonWithFurniture)
@@ -362,6 +329,7 @@ public class CatalogueController : MonoBehaviour
             );
 
         var catalogueButtonWithFurniture = Instantiate(prefabButton) as GameObject;
+        instantiatedPrefabsForButtons.Add(prefab);
 
         catalogueButtonWithFurniture.GetComponent<Image>().sprite = Sprite.Create(
             furnitureTexture,
@@ -374,19 +342,7 @@ public class CatalogueController : MonoBehaviour
         return catalogueButtonWithFurniture;
     }
 
-    public void DeleteFurniture(string name)
-    {
-        try
-        {
-            GameObject prefab = instantiatedPrefabs.Find((prefab) => prefab.gameObject.name == name);
-            instantiatedPrefabs.Remove(prefab);
-            Destroy(prefab);
-        }
-        catch (Exception ex)
-        {
-            Debug.LogException(ex);
-        }
-    }
+
 
     private void AddBackButton(GameObject content, GameObject buttonContent)
     {
@@ -404,7 +360,7 @@ public class CatalogueController : MonoBehaviour
         GameObject prefab = Instantiate(buttonPrefabPair.Prefab);
         prefab.transform.SetParent(myContainer.transform);
         prefab.name = buttonPrefabPair.Prefab.name;
-        
+
         prefab.AddComponent<FurnitureMoveSCript>();
         try
         {
@@ -418,7 +374,7 @@ public class CatalogueController : MonoBehaviour
         try
         {
             Destroy(prefab.GetComponent<Rigidbody>());
-        } 
+        }
         catch (Exception)
         {
 
@@ -445,6 +401,20 @@ public class CatalogueController : MonoBehaviour
 #endif
     }
 
+    public void DeleteFurniture(string name)
+    {
+        try
+        {
+            GameObject prefab = instantiatedPrefabs.Find((prefab) => prefab.gameObject.name == name);
+            instantiatedPrefabs.Remove(prefab);
+            Destroy(prefab);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+    }
+
 
     private void OnClickCategoryButton(string category)
     {
@@ -452,6 +422,7 @@ public class CatalogueController : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
+        Debug.Log(category);
 
         var content = viewport.transform.Find(category + "Content").GetComponent<RectTransform>();
         content.gameObject.SetActive(true);

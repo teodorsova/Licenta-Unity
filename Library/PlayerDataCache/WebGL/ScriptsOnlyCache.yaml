@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -95,20 +96,18 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1552}
     - Class: 114
       Script: {instanceID: 1554}
     - Class: 114
       Script: {instanceID: 1556}
     - Class: 114
       Script: {instanceID: 1558}
+    - Class: 114
+      Script: {instanceID: 1560}
     - Class: 114
       Script: {instanceID: 2226}
     - Class: 114
@@ -186,14 +185,16 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
-    - Class: 114
-      Script: {instanceID: 1556}
+      Script: {instanceID: 1554}
     - Class: 114
       Script: {instanceID: 1558}
+    - Class: 114
+      Script: {instanceID: 1560}
     - Class: 114
       Script: {instanceID: 2154}
     - Class: 114
@@ -201,7 +202,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2892}
     - Class: 114
+      Script: {instanceID: 3666}
+    - Class: 114
       Script: {instanceID: 4022}
+    - Class: 114
+      Script: {instanceID: 5328}
     - Class: 114
       Script: {instanceID: 5390}
     - Class: 114
@@ -217,7 +222,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7558}
     - Class: 114
-      Script: {instanceID: 7988}
+      Script: {instanceID: 7990}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1053,6 +1058,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Proyecto26.Helper
+    className: ExecuteOnMainThread
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenuScene.unity

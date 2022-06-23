@@ -2,9 +2,9 @@ mergeInto(LibraryManager.library, {
   FurnitureSpawn: function (Name, price, companyName) {
     window.dispatchReactUnityEvent(
       "FurnitureSpawn",
-         Name,
+         Pointer_stringify(Name),
          Pointer_stringify(price),
-        companyName
+        Pointer_stringify(companyName)
     );
   },
 });

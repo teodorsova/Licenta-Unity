@@ -9,17 +9,14 @@ extern "C" void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_Animation();
 	RegisterModule_Animation();
 
-	void RegisterModule_HotReload();
-	RegisterModule_HotReload();
-
 	void RegisterModule_AssetBundle();
 	RegisterModule_AssetBundle();
 
 	void RegisterModule_Audio();
 	RegisterModule_Audio();
 
-	void RegisterModule_ImageConversion();
-	RegisterModule_ImageConversion();
+	void RegisterModule_HotReload();
+	RegisterModule_HotReload();
 
 	void RegisterModule_InputLegacy();
 	RegisterModule_InputLegacy();
@@ -59,15 +56,6 @@ extern "C" void RegisterStaticallyLinkedModulesGranular()
 
 	void RegisterModule_UnityWebRequest();
 	RegisterModule_UnityWebRequest();
-
-	void RegisterModule_UnityWebRequestAssetBundle();
-	RegisterModule_UnityWebRequestAssetBundle();
-
-	void RegisterModule_UnityWebRequestAudio();
-	RegisterModule_UnityWebRequestAudio();
-
-	void RegisterModule_UnityWebRequestTexture();
-	RegisterModule_UnityWebRequestTexture();
 
 	void RegisterModule_WebGL();
 	RegisterModule_WebGL();
