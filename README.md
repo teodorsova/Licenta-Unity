@@ -4,8 +4,8 @@ This repository contains the Unity app for my bachelor thesis. There are three r
 
 # Introduction
 
-What if smaller companies or workshops that procude furniture could have the possibility to upload their products on a platform that allows cutomers to view them in 3D?
-This applications aims to do that in a simple, but efficient manner.
+What if samll companies or workshops that procude furniture could have the possibility to upload their products on a platform that allows cutomers to view them in 3D?
+The Virtual Assistant for Interior Design aims to do that in a simple, but efficient manner.
 
 # Architecture
 
